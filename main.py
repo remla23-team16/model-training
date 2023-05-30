@@ -58,6 +58,12 @@ def train_test_and_dump_classifier(X, y, classifier_path):
 def current_version(out_path):
     return len(os.listdir(out_path))
 
+if not os.path.exists(path_to_bow):
+    os.makedirs(path_to_bow)
+
+if not os.path.exists(path_to_classifier):
+    os.makedirs(path_to_classifier)
+
 dataset = load_data(path_to_tsv + tsv_name)
 corpus = preprocess_data(dataset)
 bow_name = "{}sentiment-model-{}".format(path_to_bow, current_version(path_to_bow))
