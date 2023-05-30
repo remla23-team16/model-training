@@ -56,7 +56,7 @@ def train_test_and_dump_classifier(X, y, classifier_path):
     print(accuracy_score(y_test, y_pred))
 
 def current_version(out_path):
-    return len(os.listdir(out_path))
+    return len(os.listdir(out_path)) + 1
 
 if not os.path.exists(path_to_bow):
     os.makedirs(path_to_bow)
